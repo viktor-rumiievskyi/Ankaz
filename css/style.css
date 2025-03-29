@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 :root {
   --yellow: #f5bf23;
   --black: #111;
@@ -10,7 +10,7 @@
 }
 
 * {
-  font-family: "Bebas Neue", sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -48,6 +48,7 @@ html::-webkit-scrollbar-thumb {
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+	background: var(--white);
 }
 .header .logo {
   font-size: 2.5rem;
@@ -58,7 +59,7 @@ html::-webkit-scrollbar-thumb {
   color: var(--yellow);
 }
 .header .navbar {
-  font-size: 2rem;
+  font-size: 3rem;
   color: var(--black);
   text-transform: capitalize;
   margin: 0 1rem;
@@ -97,26 +98,25 @@ html::-webkit-scrollbar-thumb {
   z-index: 1110;
   padding: 0 2rem;
   padding-top: 5rem;
-	display: none;
+  display: none;
 }
 
-.contact-info.active{
-	box-shadow: 0 0 0 100vw rgba(0, 0, 0,.7);
-	display: block;
+.contact-info.active {
+  box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+  display: block;
 }
 
 #cloce-contact-info {
-	position: absolute;
-	top: 1rem;
-	right: 1.5rem;
-	cursor: pointer;
-	font-size: 4rem;
-	color: var(--black);
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  font-size: 4rem;
+  color: var(--black);
 }
 
-
 #cloce-contact-info:hover {
-	transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .contact-info .info i {
@@ -146,8 +146,8 @@ html::-webkit-scrollbar-thumb {
   text-transform: capitalize;
 }
 .contact-info .share {
-	border-top: var(--border);
-	margin-top: 1rem;
+  border-top: var(--border);
+  margin-top: 1rem;
   padding-top: 1rem;
 }
 .contact-info .share a {
@@ -166,15 +166,112 @@ html::-webkit-scrollbar-thumb {
   color: var(--white);
 }
 
+section {
+	padding: 5rem 10%;
+}
+
+.home {
+	padding: 0;
+}
+
+.home .slide {
+	min-height: 60rem;
+	display: flex;
+	align-items: center;
+	position: relative;
+	background: url(../img/photo_2025-03-24_16-00-23.jpg) no-repeat;
+	background-size: cover !important;
+	background-position: center !important;
+}
+
+.home .slide::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(90deg, var(--white), transparent);
+}
+
+.content {
+	width: 50rem;
+	position: relative;
+}
+
+/* .content h3 {
+	font-size: 2rem;
+  color: var(--black);
+  padding: 1rem 0;
+	text-transform: uppercase;
+}
+
+.content p {
+	font-size: 2rem;
+  color: var(--black);
+  text-transform: capitalize;
+	padding: 1rem 0;
+} */
+
+ .home .swiper-button-next,
+ .home .swiper-button-prev {
+	top: initial;
+	bottom: 0;
+	left: initial;
+	right: 0;
+	height: 7rem;
+	width: 7rem;
+	line-height: 7rem;
+	font-size: 3rem;
+	background: var(--white);
+}
+
+.home .swiper-button-next::after,
+.home .swiper-button-prev::after {
+	font-size: 2rem;
+	color: var(--black);
+}
+
+.home .swiper-button-next:hover,
+.home .swiper-button-prev:hover {
+	background: var(--yellow);
+}
+
+.home .swiper-button-prev {
+	right: 7rem;
+}
+
+.btn {
+	display: inline-block;
+	margin-top: 1rem;
+	padding: 1rem 3rem;
+	background: var(--black);
+	color: var(--white);
+	cursor: pointer;
+	font-size: 1.7rem;
+	text-transform: capitalize;
+}
+
+.btn:hover {
+	background: var(--yellow);
+	color: var(--black);
+}
+
 @media (max-width: 1200px) {
   .header {
     padding: 1.5rem 2rem;
   }
+	section {
+		padding: 3rem 5%;
+	}
 }
 @media (max-width: 991px) {
   html {
     font-size: 55%;
   }
+	section {
+		padding: 3rem 2rem;
+	}
   .header #menu-btn {
     display: inline-block;
   }
@@ -187,16 +284,30 @@ html::-webkit-scrollbar-thumb {
     border-top: var(--border);
     border-bottom: var(--border);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
   .header .navbar.active {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
   .header .navbar a {
     display: block;
     margin: 2rem;
   }
+}
+
+@media (max-width: 768px) {
+	.home .slide {
+		justify-content: center;
+	}
+
+	.content {
+		text-align: center;
+	}
+
+	.content h3 {
+		font-size: 3rem;
+	}
 }
 @media (max-width: 450px) {
   html {

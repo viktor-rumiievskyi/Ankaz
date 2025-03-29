@@ -176,6 +176,25 @@ html {
 }
 // Info
 
+.content {
+	width: 50rem;
+	position: relative;
+
+	h3 {
+		@include titleText(6rem);
+		text-transform: uppercase;
+	}
+
+	p {
+		@include graphText(1.5rem);
+		padding: 1rem 0;
+	}
+}
+
+.slide {
+	background: url(img/photo_2025-03-24_16-00-23.jpg) no-repeat;
+}
+
 @media (max-width: 1200px) {
   .header {
     padding: 1.5rem 2rem;
@@ -212,6 +231,8 @@ html {
     }
   }
 }
+
+
 
 @media (max-width: 450px) {
   html {
